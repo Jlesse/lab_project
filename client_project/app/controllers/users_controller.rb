@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(1)
   end
 
   def new
@@ -15,6 +16,12 @@ class UsersController < ApplicationController
   end
 
   def logout
+  end
+
+  private
+
+  def subject_params
+    params.require(:user).permit
   end
 
 end

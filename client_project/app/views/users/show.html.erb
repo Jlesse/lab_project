@@ -1,2 +1,18 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.name %></h1>
+<ul>
+  <li>
+    <% if @user.admin %>
+      <p> Administrator</p>
+    <% end %>
+  </li>
+  <li>
+    <%= "#{@user.first_name} #{@user.last_name}" %>
+  </li>
+  <li>
+    <%= @user.email %>
+  </li>
+  <h3> Research </h3>
+  <% @user.experiments.each do |experiment| %>
+    <%= link_to experiment.title, experiment_path(experiment) %>
+  <% end %>
+</ul>
