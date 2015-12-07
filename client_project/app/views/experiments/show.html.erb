@@ -1,2 +1,56 @@
-<h1>Experiments#show</h1>
-<p>Find me in app/views/experiments/show.html.erb</p>
+<h1><%= @experiment.name %></h1>
+<ul>
+  <li>
+    Title: <%= @experiment.title%>
+  </li>
+  <li>
+    Problem: <%= @experiment.problem %>
+  </li>
+   <li>
+    Proposal: <%= @experiment.proposal %>
+  </li>
+  <li>
+    Hypothesis: <%= @experiment.hypothesis %>
+  </li>
+  <li>
+    Materials: <%= @experiment.materials %>
+  </li>
+  <li>
+    Procedures: <%= @experiment.procedure %>
+  </li>
+    <li>
+    <h3> Observations </h3>
+    <%= @experiment.observations.each do |observation|%>
+    <h4><%= observation.title %></h4>
+    <p><%=  observation.text %></p>
+    <p> - <%= link_to "#{observation.user.first_name} #{observation.user.last_name}" , user_path(observation.user)%></p>
+    <% end %>
+  </li>
+  <li>
+    Results: <%= @experiment.results %>
+  </li>
+  <li>
+    Conclusion: <%= @experiment.conclusion %>
+  </li>
+  <li>
+    Active: <%= @experiment.active %>
+  </li>
+  <li>
+    Begin date: <%= @experiment.start_date %>
+  </li>
+  <li>
+    End date: <%= @experiment.end_date %>
+  </li>
+  <li>
+  </li>
+  <li>
+  </li>
+  <h3> Researchers </h3>
+  <ul>
+  <% @experiment.users.each do |user| %>
+    <li><%= link_to "#{user.first_name} #{user.last_name}", user_path(user) %></li>
+  <% end %>
+  </ul>
+</ul>
+
+
