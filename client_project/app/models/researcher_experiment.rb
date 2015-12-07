@@ -1,4 +1,4 @@
 class ResearcherExperiment < ActiveRecord::Base
-  has_many :researchers {class: "User"}, foreign_key: "user_id"
-  has_many :experiments
+  belongs_to :researcher
+  belongs_to :experiment
 end
