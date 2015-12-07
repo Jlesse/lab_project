@@ -26,7 +26,7 @@ experiment = Experiment.create!(title: Faker::Lorem.word,
                                 end_date: Faker::Date.forward(23)
 )
 
-user.researcher_experiments.create!(experiment_id: rand(10))
+user.researcher_experiments.create!(experiment_id: rand(10) + 1 )
 # new_user.save
 
 observation = Observation.create!(title: Faker::Lorem.word,
