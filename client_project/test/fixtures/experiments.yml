@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  problem: MyText
+  hypothesis: MyText
+  materials: MyText
+  procedure: MyText
+  results: MyText
+  conclusion: MyText
+  proposal_id: 1
+  active: false
+  start_date: 1
+  end_date: 1
+
+two:
+  title: MyString
+  problem: MyText
+  hypothesis: MyText
+  materials: MyText
+  procedure: MyText
+  results: MyText
+  conclusion: MyText
+  proposal_id: 1
+  active: false
+  start_date: 1
+  end_date: 1
