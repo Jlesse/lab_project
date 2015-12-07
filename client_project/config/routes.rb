@@ -5,5 +5,4 @@ resources :experiments
 resources :comments
 resources :observations
 resources :proposals
-
 end
