@@ -1,5 +1,6 @@
 <h1>Experiments Homepage</h1>
 <div>
+<h2> Researchers</h2>
 <% if @users %>
 <ul>
   <% @users.each do |user| %>
@@ -12,10 +13,11 @@
 </div>
 <div>
 <% if @experiments %>
+<h2>Experiments</h2>
   <ul>
   <% @experiments.each do |experiment| %>
     <li>
-      <a href=""><%= experiment.title %></a>
+      <%= link_to "#{experiment.title}", experiment_path(experiment) %>
     </li>
   <% end%>
   </ul>
