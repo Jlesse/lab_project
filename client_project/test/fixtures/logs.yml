@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  procedure_id: 1
+  researcher_id: 1
+  comment: MyString
+  observation_id: 1
+
+two:
+  procedure_id: 1
+  researcher_id: 1
+  comment: MyString
+  observation_id: 1
