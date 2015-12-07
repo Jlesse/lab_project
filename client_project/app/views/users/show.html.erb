@@ -1,10 +1,10 @@
-<h1><%= @user.name %></h1>
+<h1><%= @user.first_name %></h1>
 <ul>
-  <li>
     <% if @user.admin %>
-      <p> Administrator</p>
-    <% end %>
+  <li>
+    <p> Administrator</p>
   </li>
+    <% end %>
   <li>
     <%= "#{@user.first_name} #{@user.last_name}" %>
   </li>
