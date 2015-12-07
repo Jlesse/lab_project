@@ -44,4 +44,12 @@ proposal = Proposal.create!(experiment_id: rand(10),
                             proposed_funding: Faker::Commerce.price
 )
 
+procedure = Procedure.create!(text: Faker::Lorem.paragraph,
+                              experiment_id: rand(10))
+
+logs = Log.create!(procedure_id: rand(10),
+                   user_id: rand(10),
+                   comment: Faker::Lorem.sentence,
+                   observation_id: rand(10))
+
 end
