@@ -1,2 +1,23 @@
-<h1>Experiments#index</h1>
-<p>Find me in app/views/experiments/index.html.erb</p>
+<h1>Experiments Homepage</h1>
+<div>
+<% if @users %>
+<ul>
+  <% @users.each do |user| %>
+  <li>
+    <%= link_to "#{user.first_name} #{user.last_name} | #{user.email}", user_path(user) %>
+  </li>
+  <% end %>
+</ul>
+<% end %>
+</div>
+<div>
+<% if @experiments %>
+  <ul>
+  <% @experiments.each do |experiment| %>
+    <li>
+      <a href=""><%= experiment.title %></a>
+    </li>
+  <% end%>
+  </ul>
+<%end%>
+</div>

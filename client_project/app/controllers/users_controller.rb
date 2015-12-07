@@ -10,4 +10,11 @@ class UsersController < ApplicationController
 
   def edit
   end
+
+  def login
+  end
+
+  def logout
+  end
+
 end
