@@ -18,9 +18,9 @@
     <li>
     <h3> Observations </h3>
     <%= @experiment.observations.each do |observation|%>
-    <h4><%= observation.title %></h4>
-    <p><%=  observation.text %></p>
-    <p> - <%= link_to "#{observation.user.first_name} #{observation.user.last_name}" , user_path(observation.user)%></p>
+      <h4><%= observation.title %></h4>
+      <p><%=  observation.text %></p>
+      <p> - <%= link_to "#{observation.user.first_name} #{observation.user.last_name}" , user_path(observation.user)%></p>
     <% end %>
   </li>
   <li>
@@ -50,16 +50,42 @@
     <% end %>
   <% end %>
   </ul>
+
   <h1>Logs</h2>
-    <table>
+    <div id="content">
+      <% @experiment.observations.each do|observation| %>
+      <h3><%=observation.title%></h3>
+      <div id = "observation">
+        <h4>procedures completed:</h4>
+        <%observation.procedures.each do |procedure|%>
+          <ul>
+              <li class="procedure_text"><%=procedure.text%></li>
+          </ul>
+            <% end %>
+          <ul>
+            <li class="observation_text"><%=observation.text%></li>
+            <li class="observation_text"><%=observation.created_at%></li>
+            <li class="observation_text"><%=" - #{observation.user.first_name} #{observation.user.last_name}"%></li>
+          </ul>
+      </div>
+    <% end %>
+    </div>
+<!--
+      <table>
       <th>procedure</th><th>researcher</th><th>observation </th><th>completed at</th>
-    <% @experiment.logs.each do |log| %>
+    <% @experiment.observations.each do|observation| %>
       <tr>
-        <td><%=log.procedure.text%></td>
-        <td><%="#{log.user.first_name} #{log.user.last_name}"%></td>
-        <td><%=log.observation.text%></td>
-        <td><%=log.created_at%></td>
+        <td>
+          <tr>
+            <%observation.procedures.each do |procedure|%>
+              <td><%=procedure.text%></td>
+            <% end %>
+          </tr>
+        </td>
+        <td><%="#{observation.user.first_name} #{observation.user.last_name}"%></td>
+        <td><%=observation.text%></td>
+        <td><%=observation.created_at%></td>
       </tr>
     <% end %>
-    </table>
-</ul>
+    </table> -->
+
