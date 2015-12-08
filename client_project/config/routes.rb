@@ -10,4 +10,8 @@ resources :observations
 
 resources :proposals
 
+get 'admin', :to => "sessions#index"
+
+match ':controller(/:action(/:id))', :via => [:get, :post]
+
 end
