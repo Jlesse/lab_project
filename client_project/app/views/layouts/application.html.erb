@@ -17,17 +17,21 @@
       </div>
       <div class="navbar">
         <ul>
-          <li class="nav_list">username</li>
-          <li class="nav_list">logout</li>
-          <li class="nav_list">login</li>
-          <li class="nav_list">creat user</li>
+              <li><a href="/">Home</a></li>
+              <% if logged_in?%>
+                <% if admin? %>
+                <li>ADMIN</li>
+                <% else %>
+              <li><a href="#">Signed in as <%= current_user.first_name %> <%= current_user.last_name %></a></li>
+              <li><a href="/sessions/logout">Logout</a></li>
+                <% end %>
+              <% else %>
+              <li><a href="/users/new">Register</a></li>
+              <li><a href="/sessions/login">Login</a></li>
+              <% end %>
         </ul>
       </div>
     </header>
       <%= yield %>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
