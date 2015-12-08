@@ -1,8 +1,8 @@
 module ApplicationHelper
 
   def current_user
-    p @current_user
-    @current_user ||= User.find(session[:user_id])
+    # change seed file so this doesn't break...
+    User.find(session[:user_id])
   end
 
   def admin?
