@@ -1,25 +1,12 @@
-<h1>Experiments Homepage</h1>
-<div>
-<h2> Researchers</h2>
-<% if @users %>
-<ul>
-  <% @users.each do |user| %>
-  <li>
-    <%= link_to "#{user.first_name} #{user.last_name} | #{user.email}", user_path(user) %>
-  </li>
-  <% end %>
-</ul>
-<% end %>
-</div>
-<div>
-<% if @experiments %>
-<h2>Experiments</h2>
-  <ul>
-  <% @experiments.each do |experiment| %>
-    <li>
-      <%= link_to "#{experiment.title}", experiment_path(experiment) %>
-    </li>
-  <% end%>
-  </ul>
-<%end%>
-</div>
+<h1>Experiments</h1>
+  <div>
+    <% if @experiments %>
+      <ul>
+        <% @experiments.each do |experiment| %>
+          <li>
+            <%= link_to "#{experiment.title}", experiment_path(experiment) %>
+          </li>
+        <% end%>
+      </ul>
+    <%end%>
+  </div>
