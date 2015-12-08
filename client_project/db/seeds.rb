@@ -9,7 +9,7 @@
 user = User.create!(first_name: Faker::Name.first_name,
                     last_name: Faker::Name.last_name,
                     email: Faker::Internet.free_email,
-                    hashed_password: "password",
+                    password: "password",
                     admin: false
                     )
 
