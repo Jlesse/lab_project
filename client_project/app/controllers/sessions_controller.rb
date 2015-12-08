@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
 
   before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
 
->>>>>>> master
   def index
     #display text and links
   end
