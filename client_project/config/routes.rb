@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'experiments#index'
 resources :users
 resources :experiments do
