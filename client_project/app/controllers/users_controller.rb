@@ -11,20 +11,31 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def create
+    p user_params
+    @user = User.create(user_params)
+    redirect_to @user
+  end
+
   def edit
-    @user = User.new
+    @user = User.find(params[:id])
   end
 
-  def login
+  def update
+    @user = User.find(params[:id])
+    if(@user.update(user_params))
+      redirect_to user_path(@user)
+    else
+      render('edit')
+    end
   end
 
-  def logout
-  end
+
 
   private
 
-  def subject_params
-    params.require(:user).permit
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :admin)
   end
 
 end
