@@ -1,19 +1,19 @@
 <h1><%= @experiment.title %></h1>
 <ul>
   <li>
-    Problem: <%= @experiment.problem %>
+    <b>Problem:</b> <%= @experiment.problem %>
   </li>
    <li>
-    Proposal: <%= @experiment.proposal.abstract %>
+   <b>Proposal:</b> <%= @experiment.proposal.abstract %>
   </li>
   <li>
-    Hypothesis: <%= @experiment.hypothesis %>
+    <b>Hypothesis:</b> <%= @experiment.hypothesis %>
   </li>
   <li>
-    Materials: <%= @experiment.materials %>
+    <b>Materials:</b> <%= @experiment.materials %>
   </li>
   <li>
-    Procedures: <%= @experiment.procedure %>
+    <b>Procedures:</b> <%= @experiment.procedure %>
   </li>
     <li>
     <h3> Observations </h3>
@@ -51,7 +51,27 @@
   <% end %>
   </ul>
 
-  <h1>Logs</h2>
+   <div id="content">
+      <% @experiment.logs.each do|log| %>
+      <h3><%=observation.title%></h3>
+      <div id = "observation">
+        <h4>procedures completed:</h4>
+        <%observation.procedures.each do |procedure|%>
+          <ul>
+              <li class="procedure_text"><%=procedure.text%></li>
+          </ul>
+            <% end %>
+          <ul>
+            <li class="observation_text"><%=observation.text%></li>
+            <li class="observation_text"><%=observation.created_at%></li>
+            <li class="observation_text"><%=" - #{observation.user.first_name} #{observation.user.last_name}"%></li>
+          </ul>
+      </div>
+    <% end %>
+    </div> -->
+
+
+  <!-- <h1>Logs</h2>
     <div id="content">
       <% @experiment.observations.each do|observation| %>
       <h3><%=observation.title%></h3>
@@ -69,7 +89,7 @@
           </ul>
       </div>
     <% end %>
-    </div>
+    </div> -->
 <!--
       <table>
       <th>procedure</th><th>researcher</th><th>observation </th><th>completed at</th>
