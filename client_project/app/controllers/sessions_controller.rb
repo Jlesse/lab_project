@@ -1,10 +1,11 @@
 class SessionsController < ApplicationController
 
   def index
+    #display text and links
   end
 
   def login
-
+    #display login form
   end
 
   def attempt_login
@@ -16,10 +17,11 @@ class SessionsController < ApplicationController
     end
     if authorized_user
       flash[:notice] = "You are now logged in."
-      redirect_to(:controller => "experiment", :action => "index")
+      redirect_to(:action => "index")
     else
       flash[:notice] = "Invalid email/password combination"
       redirect_to(:action => 'login')
+    end
   end
 
   def logout
