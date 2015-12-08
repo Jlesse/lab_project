@@ -5,6 +5,7 @@ class ExperimentsController < ApplicationController
   def index
     @users = User.all
     @experiments = Experiment.all
+    @experiment = Experiment.new
   end
 
   def show
