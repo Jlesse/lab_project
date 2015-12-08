@@ -1,2 +1,14 @@
-<h1>Experiments#edit</h1>
-<p>Find me in app/views/experiments/edit.html.erb</p>
+<h1>Edit Experiment</h1>
+<%= simple_form_for @experiment do |f| %>
+  <%= f.input :title %>
+  <%= f.input :problem, as: :text %>
+  <%= f.input :hypothesis, as: :text %>
+  <%= f.input :materials, as: :text %>
+  <%= f.input :procedure, as: :text %>
+  <%= f.input :results, as: :text %>
+  <%= f.input :conclusion, as: :text %>
+  <%= f.input_field :active, as: :boolean %>
+  <%= f.input :start_date, as: :date %>
+  <%= f.input :end_date, as: :date %>
+  <%= f.button :submit %>
+<% end %>
