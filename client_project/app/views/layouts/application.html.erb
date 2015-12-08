@@ -31,11 +31,21 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
 
-              <li><a href="#">Username</a></li>
-              <li><a href="#">Logout</a></li>
-              <li><a href="#">Create User</a></li>
-              <li><a href="#">Login</a></li>
-              
+              <li><a href="/">Home</a></li>
+              <% if logged_in?%>
+              <li><a href="#">Signed in as <%= current_user.first_name %></a></li>
+              <li><a href="/sessions/logout">Logout</a></li>
+              <% else %>
+              <li><a href="/users/new">Register</a></li>
+              <li><a href="/sessions/login">Login</a></li>
+              <% end %>
+
+              <a href="/users/<%= current_user.id %>/profile">profile</a>
+
+              <a href="/users/new">register</a>
+              <a href="/sessions/new">login</a>
+
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>

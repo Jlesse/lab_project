@@ -9,6 +9,7 @@ resources :comments
 resources :observations
 
 get 'admin', :to => "sessions#index"
+get 'login', :to => "sessions#login"
 # get 'students' :to => "sessions#index"
 #go to the same place, redirect to different pages, with before_actions to prevent
 # access unless you belonged...login page needs to be homepage, directs based on login...
