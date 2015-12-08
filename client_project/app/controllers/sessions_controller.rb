@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+  before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
+
   def index
     #display text and links
   end
@@ -16,6 +18,7 @@ class SessionsController < ApplicationController
       end
     end
     if authorized_user
+      session[:user_id] = authorized_user.id
       flash[:notice] = "You are now logged in."
       redirect_to(:action => "index")
     else
@@ -25,6 +28,7 @@ class SessionsController < ApplicationController
   end
 
   def logout
+    session[:user_id] = nil
     flash[:notice] = "Logged out"
     redirect_to(:action => "login")
   end

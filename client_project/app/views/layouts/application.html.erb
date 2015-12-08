@@ -18,10 +18,16 @@
       </div>
       <div class="navbar">
         <ul>
-          <li class="nav_list"><a href="/sessions/login">login</a></li>
-          <li class="nav_list"><a href="/users/new">create user</a></li>
-          <li class="nav_list"><a href="">logout</a></li>
-          <li class="nav_list"><a href="">username</a></li>
+          <% if logged_in?%>
+            <% if admin? %>
+            <li class="nav_list">ADMIN</li>
+            <% end %>
+          <li class="nav_list"><a href="#">Signed in as <%= current_user.first_name %> <%= current_user.last_name %></a></li>
+          <li class="nav_list"><a href="/sessions/logout">Logout</a></li>
+          <% else %>
+          <li class="nav_list"><a href="/users/new">Register</a></li>
+          <li class="nav_list"><a href="/sessions/login">Login</a></li>
+          <% end %>
         </ul>
       </div>
     </header>
