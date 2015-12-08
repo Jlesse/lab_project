@@ -46,6 +46,9 @@ end
                             experiment_id: 1 )
 
   user.observations[0]comments.create(text: Faker::Lorem.sentence)
+  user.observations[0]log.create(comment: Faker::Lorem.sentence)
+
+  LabTask.create!(log_id: 1, procedure_id: rand(3) + 1)
 
 end
 
@@ -61,6 +64,9 @@ end
                             experiment_id: 2 )
 
   user.observations[0]comments.create(text: Faker::Lorem.sentence)
+  user.observations[0]log.create(comment: Faker::Lorem.sentence)
+
+  LabTask.create!(log_id: 2, procedure_id: rand(4..6))
 
 end
 
@@ -76,6 +82,9 @@ end
                             experiment_id: 3 )
 
   user.observations[0]comments.create(text: Faker::Lorem.sentence)
+  user.observations[0]log.create(comment: Faker::Lorem.sentence)
+
+  LabTask.create!(log_id: 3, procedure_id: rand(7..9))
 
 end
 
@@ -91,6 +100,9 @@ end
                             experiment_id: 4 )
 
   user.observations[0]comments.create(text: Faker::Lorem.sentence)
+  user.observations[0]log.create(comment: Faker::Lorem.sentence)
+
+  LabTask.create!(log_id: 4, procedure_id: rand(10..12))
 
 end
 
@@ -106,5 +118,8 @@ end
                             experiment_id: 5 )
 
   user.observations[0]comments.create(text: Faker::Lorem.sentence)
+  user.observations[0]log.create(comment: Faker::Lorem.sentence)
+
+  LabTask.create!(log_id: 5, procedure_id: rand(13..15))
 
 end
