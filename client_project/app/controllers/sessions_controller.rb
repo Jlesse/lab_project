@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  layout "admin"
   def index
     #display text and links
   end

@@ -48,4 +48,11 @@
     <li><%= link_to "#{researcher.first_name} #{researcher.last_name}", user_path(researcher) %></li>
   <% end %>
   </ul>
+  <h1>Logs</h2>
+    <table>
+      <th>procedure</th><th>researcher</th><th>observation </th><th>completed at</th>
+    <% @experiment.logs.each do |log| %>
+      <tr><td>log.procedure</td><td>log.user</td><td>log.observation</td><td>log.created_at</td></tr>
+    <% end %>
+    </table>
 </ul>

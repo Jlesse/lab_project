@@ -3,4 +3,6 @@ class Experiment < ActiveRecord::Base
   has_many :researchers, through: :researcher_experiments
   has_many :observations
   has_one :proposal
+  has_many :procedures
+  has_many :logs, through: :procedures
 end
