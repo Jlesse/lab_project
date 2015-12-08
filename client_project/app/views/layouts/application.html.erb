@@ -22,12 +22,15 @@
             <% if admin? %>
               <li class="nav_list">ADMIN</li>
             <% end %>
-            <li class="nav_list"><a href="/users/show">Signed in as <%= current_user.first_name %> <%= current_user.last_name %></a></li>
-            <li class="nav_list"><a href="/sessions/logout">Logout</a></li>
+
+              <li class="nav_list"><a href="/sessions/logout">logout</a></li>
+              <li class="nav_list"><a href="/experiments/new">create experiment</a></li>
+              <li class="nav_list"><a href="#"><%= current_user.first_name %> <%= current_user.last_name %></a></li>
           <% else %>
-          <li class="nav_list"><a href="/users/new">Register</a></li>
-          <li class="nav_list"><a href="/sessions/login">Login</a></li>
+              <li class="nav_list"><a href="/users/new">register</a></li>
+              <li class="nav_list"><a href="/sessions/login">login</a></li>
           <% end %>
+              <li class="nav_list"><a href="/">home</a></li>
         </ul>
       </div>
     </header>
