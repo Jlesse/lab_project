@@ -4,7 +4,7 @@
     Problem: <%= @experiment.problem %>
   </li>
    <li>
-    Proposal: <%= @experiment.proposal %>
+    Proposal: <%= @experiment.proposal.abstract %>
   </li>
   <li>
     Hypothesis: <%= @experiment.hypothesis %>
@@ -45,7 +45,21 @@
   <h3> Researchers </h3>
   <ul>
   <% @experiment.researchers.each do |researcher| %>
+    <% if researcher%>
     <li><%= link_to "#{researcher.first_name} #{researcher.last_name}", user_path(researcher) %></li>
+    <% end %>
   <% end %>
   </ul>
+  <h1>Logs</h2>
+    <table>
+      <th>procedure</th><th>researcher</th><th>observation </th><th>completed at</th>
+    <% @experiment.logs.each do |log| %>
+      <tr>
+        <td><%=log.procedure.text%></td>
+        <td><%="#{log.user.first_name} #{log.user.last_name}"%></td>
+        <td><%=log.observation.text%></td>
+        <td><%=log.created_at%></td>
+      </tr>
+    <% end %>
+    </table>
 </ul>
