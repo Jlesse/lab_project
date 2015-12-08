@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20151208203427) do
   end
 
   create_table "logs", force: :cascade do |t|
+    t.integer  "procedure_id"
     t.integer  "user_id"
     t.string   "comment"
     t.integer  "observation_id"
