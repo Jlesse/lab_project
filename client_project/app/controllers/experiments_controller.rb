@@ -13,5 +13,6 @@ class ExperimentsController < ApplicationController
   end
 
   def edit
+    @experiment = Experiment.new
   end
 end
