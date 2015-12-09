@@ -73,7 +73,7 @@
   </div>
 </div>
 
-<% if current_user.experiments.any? {|experiment| experiment.id} %>
+<% if admin? || current_user.experiments.any? {|experiment| experiment.id} %>
   <center>
     <div class="new_log_form">
       <h3><a href="/experiments/<%= @experiment.id %>/logs/new">Create New Log</a></h3>
