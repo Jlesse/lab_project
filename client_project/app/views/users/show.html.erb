@@ -15,4 +15,5 @@
   <% @user.experiments.each do |experiment| %>
     <%= link_to experiment.title, experiment_path(experiment) %>
   <% end %>
+  <%= link_to "Edit Profile Information", edit_user_path(@user) %>
 </ul>
