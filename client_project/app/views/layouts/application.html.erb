@@ -23,12 +23,13 @@
       <div class="navbar">
         <ul>
           <% if logged_in?%>
-
-              <li class="nav_list"><a href="/sessions/logout">logout</a></li>
-              <li class="nav_list"><a href="/users/<%= current_user.id %>"><%= current_user.first_name %> <%= current_user.last_name %></a></li>
-              <% if admin? %>
+            <% if admin? %>
+              <li class="nav_list">ADMIN</li>
               <li class="nav_list"><a href="/experiments/new">create experiment</a></li>
             <% end %>
+
+              <li class="nav_list"><a href="/sessions/logout">logout</a></li>
+              <li class="nav_list"><a href="#"><%= current_user.first_name %> <%= current_user.last_name %></a></li>
           <% else %>
               <li class="nav_list"><a href="/users/new">register</a></li>
               <li class="nav_list"><a href="/sessions/login">login</a></li>
