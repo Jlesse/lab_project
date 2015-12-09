@@ -35,25 +35,31 @@
     </li>
     <li>
     </li>
-    <h3> Researchers </h3>
-    <ul>
-    <% @experiment.researchers.each do |researcher| %>
-      <li><%= link_to "#{researcher.first_name} #{researcher.last_name}", user_path(researcher) %></li>
-    <% end %>
-    </ul>
-
+    <div id="researcher_container">
+      <h3> Researchers </h3>
+      <ul>
+      <% @experiment.researchers.each do |researcher| %>
+        <li><%= link_to "#{researcher.first_name} #{researcher.last_name}", user_path(researcher) %></li>
+      <% end %>
+      </ul>
+    </div>
   <div id="content">
     <% @experiment.logs.each do |log| %>
     <div id = "log">
       <h4> Observation: <%= log.observation.title %></h4>
       <p>name: <%="#{log.user.first_name} #{log.user.last_name}"%></p>
-       <% @experiment.procedures.each do |experiment_procedure| %>
-       <p><%= experiment_procedure.text%>
-        <% if log.procedures.include?(experiment_procedure)%>
-          CHECKED!
-        <% end %></p>
+        <div id="procedure_task">
+            <ol>
+           <% @experiment.procedures.each do |experiment_procedure| %>
+             <li><%= experiment_procedure.text%>
+              <% if log.procedures.include?(experiment_procedure)%>
+                <i class="material-icons">done</i></li>
+           <% end %>
        <% end %>
-       </div>
+            </ol>
+
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
