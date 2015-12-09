@@ -1,9 +1,9 @@
 <h1>Create User</h1>
   <%= simple_form_for @user do |f| %>
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :email %>
-    <%= f.input :password %>
-    <%= f.input :admin,     as: :radio_buttons %>
+    <%= f.input :first_name %><br>
+    <%= f.input :last_name %><br>
+    <%= f.input :email %><br>
+    <%= f.input :password %><br>
+    <%= f.input :admin,     as: :radio_buttons %><br><br>
     <%= f.button :submit %>
   <% end %>
