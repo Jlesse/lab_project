@@ -1,18 +1,18 @@
-<% if !flash[:notice].blank? %>
-  <div class=”notice”>
-      <%=flash[:notice] %>
-  </div>
-<% end %>
-
 <div class="login">
+  <% if !flash[:notice].blank? %>
+    <div class=”notice”>
+        <%=flash[:notice] %>
+    </div>
+  <% end %>
+
   <%= form_tag(:action => 'attempt_login') do %>
   <table>
     <tr>
-      <td><%= label_tag(:email) %></td>
+      <td><h3><%= label_tag(:email) %></h3></td>
       <td><%= text_field_tag(:email) %></td>
     </tr>
     <tr>
-      <td><%= label_tag(:password) %></td>
+      <td><h3><%= label_tag(:password) %></h3></td>
       <td><%= password_field_tag(:password) %></td>
     </tr>
     <tr>
