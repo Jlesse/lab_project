@@ -44,7 +44,7 @@
         <h3> Researchers </h3>
         <ul>
         <% @experiment.researchers.each do |researcher| %>
-          <li><%= link_to "#{researcher.first_name} #{researcher.last_name}", user_path(researcher) %></li>
+          <li id="researcher_name"><%= link_to "#{researcher.first_name} #{researcher.last_name}", user_path(researcher) %></li>
         <% end %>
         </ul>
       </div>
@@ -59,11 +59,10 @@
              <% @experiment.procedures.each do |experiment_procedure| %>
                <li><%= experiment_procedure.text%>
                 <% if log.procedures.include?(experiment_procedure)%>
-                  <i class="material-icons #00bcd4">done</i></li>
+                  <i class="tiny material-icons cyan">done</i></li>
              <% end %>
          <% end %>
               </ol>
-
           </div>
         </div>
       <% end %>
