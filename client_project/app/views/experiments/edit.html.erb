@@ -1,14 +1,53 @@
-<h1>Edit Experiment</h1>
-<%= simple_form_for @experiment do |f| %>
-  <%= f.input :title %>
-  <%= f.input :problem, as: :text %>
-  <%= f.input :hypothesis, as: :text %>
-  <%= f.input :materials, as: :text %>
-  <%= f.input :procedure, as: :text %>
-  <%= f.input :results, as: :text %>
-  <%= f.input :conclusion, as: :text %>
-  <%= f.input_field :active, as: :boolean %>
-  <%= f.input :start_date, as: :date %>
-  <%= f.input :end_date, as: :date %>
-  <%= f.button :submit %>
-<% end %>
+<div class="experiment_container">
+  <h1>Edit Experiment</h1>
+    <%= form_for :experiment, url: experiments_path do |f| %>
+      <p>
+        <%= f.label :title %><br>
+        <%= f.text_field :title %>
+      </p>
+      <p>
+        <%= f.label :problem %><br>
+        <%= f.text_area :problem %>
+      </p>
+      <p>
+        <%= f.label :hypothesis %><br>
+        <%= f.text_area :hypothesis %>
+      </p>
+      <p>
+        <%= f.label :materials %><br>
+        <%= f.text_area :materials %>
+      </p>
+      <p>
+        <%= f.label :procedure %><br>
+        <%= f.text_area :procedure %>
+      </p>
+      <p>
+        <%= f.label :results %><br>
+        <%= f.text_area :results %>
+      </p>
+      <p>
+        <%= f.label :conclusion %><br>
+        <%= f.text_area :conclusion %>
+      </p>
+      <div>
+        <b><%= label :active, "Active:" %></b>
+        <%= label :active, "Yes" %>
+        <%= f.radio_button :access_rights, false , :checked => true , :value => false %>
+        <%= label :active, "No" %>
+        <%= f.radio_button :access_rights, false , :checked => true , :value => false %>
+      </div>
+
+      <p>
+        <%= f.label :start_date %><br>
+        <%= f.date_field :start_date %>
+      </p>
+      <p>
+        <%= f.label :end_date %><br>
+        <%= f.date_field :end_date %>
+      </p>
+
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+</div>
