@@ -16,8 +16,8 @@
                               conclusion: Faker::Lorem.paragraph,
                               proposal_id: i + 1,
                               active: true,
-                              start_date: Faker::Date.backward(20),
-                              end_date: Faker::Date.forward(23))
+                              start_date: Faker::Date.between(20.days.ago, Time.now, :all),
+                              end_date: Faker::Time.forward(20))
 
   proposal = Proposal.create!(experiment_id: i + 1,
                             abstract: Faker::Lorem.paragraph,
