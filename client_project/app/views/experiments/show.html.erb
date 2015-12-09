@@ -34,7 +34,7 @@
         <label class="exp_header">End date:</label> <%= @experiment.end_date.strftime("%m/%d/%Y") %>
       </li><br>
       <li>
-        <label class="exp_header">Grad Hour Budget:</label> <%= @experiment.grad_hour_budget %>
+        <label class="exp_header">Grad Hour Budget:</label> <%= summed_log_hours %> out of <%= @experiment.grad_hour_budget %> hours worked.
       </li><br>
       <li>
       </li>
@@ -70,8 +70,8 @@
   </div>
 </div>
 
-<center>
-  <div class="new_log_form">
-    <h3><a href="/experiments/<%= @experiment.id %>/logs/new">Create New Log</a></h3>
-  </div>
-</center>
+  <center>
+    <div class="new_log_form">
+      <h3><a href="/experiments/<%= @experiment.id %>/logs/new">Create New Log</a></h3>
+    </div>
+  </center>
