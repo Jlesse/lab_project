@@ -102,12 +102,6 @@
 
 }
 
- .experiment_list {
-   align-content: center;
-   font-size: 1.5em;
- }
-
-
 ul.nav_list {
     list-style-type: none;
     margin: 0;
@@ -132,6 +126,25 @@ ul.nav_list {
   margin-right: auto;
   padding: 10px;
 }
+
+.experiment_show_container {
+  width: 90%;
+  /*background-color: #00bcd4;*/
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+}
+
+ .experiment_list {
+   align-content: center;
+   font-size: 1.5em;
+ }
+
+ .exp_header {
+   font-size: 1.25em;
+   font-weight: bolder;
+ }
 
 .observation_text {
   /*background-color: blue;*/
