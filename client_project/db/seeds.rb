@@ -46,7 +46,11 @@ end
   user.observations.create!(title: Faker::Lorem.word, text: Faker::Lorem.paragraph,
                             experiment_id: 1 )
 
+<<<<<<< HEAD
+  Log.create(user_id: 1 + i, observation_id: 1 + i, comment: Faker::Lorem.sentence)
+=======
   Log.create(user_id: 1 + i, observation_id: 1 + i, comment: Faker::Lorem.sentence, hours_worked: rand(5) + 1)
+>>>>>>> e29248b1ddb0201b470dd612c4b3944d55a1c441
   # Log.create(user_id: 2, observation_id: i, comment: Faker::Lorem.sentence)
 
   # LabTask.create!(log_id: 1 + i, procedure_id: rand(6) + 1)
@@ -66,7 +70,11 @@ end
   user.observations.create!(title: Faker::Lorem.word, text: Faker::Lorem.paragraph,
                             experiment_id: 2 )
 
+<<<<<<< HEAD
+  Log.create(user_id: 6 + i, observation_id: 6 + i, comment: Faker::Lorem.sentence)
+=======
   Log.create(user_id: 6 + i, observation_id: 6 + i, comment: Faker::Lorem.sentence, hours_worked: rand(5) + 1)
+>>>>>>> e29248b1ddb0201b470dd612c4b3944d55a1c441
   # Log.create(user_id: 7 + i, observation_id: 7 + i, comment: Faker::Lorem.sentence)
 
   LabTask.create!(log_id: 6 + i, procedure_id: rand(7..13))
@@ -86,7 +94,11 @@ end
   user.observations.create!(title: Faker::Lorem.word, text: Faker::Lorem.paragraph,
                             experiment_id: 3 )
 
+<<<<<<< HEAD
+  Log.create(user_id: 11 + i, observation_id: 11 + i, comment: Faker::Lorem.sentence)
+=======
   Log.create(user_id: 11 + i, observation_id: 11 + i, comment: Faker::Lorem.sentence, hours_worked: rand(5) + 1)
+>>>>>>> e29248b1ddb0201b470dd612c4b3944d55a1c441
   # Log.create(user_id: 12 + i, observation_id: 12 + i, comment: Faker::Lorem.sentence)
 
 
@@ -107,7 +119,11 @@ end
   user.observations.create!(title: Faker::Lorem.word, text: Faker::Lorem.paragraph,
                             experiment_id: 4 )
 
+<<<<<<< HEAD
+  Log.create(user_id: 16 + i, observation_id: 16 + i, comment: Faker::Lorem.sentence)
+=======
   Log.create(user_id: 16 + i, observation_id: 16 + i, comment: Faker::Lorem.sentence, hours_worked: rand(5) + 1)
+>>>>>>> e29248b1ddb0201b470dd612c4b3944d55a1c441
   # Log.create(user_id: 17 + i, observation_id: 17 + i, comment: Faker::Lorem.sentence)
 
   LabTask.create!(log_id: 16 + i, procedure_id: rand(19..25))
@@ -127,7 +143,11 @@ end
   user.observations.create!(title: Faker::Lorem.word, text: Faker::Lorem.paragraph,
                             experiment_id: 5 )
 
+<<<<<<< HEAD
+  Log.create(user_id: 21 + i, observation_id: 21 + i, comment: Faker::Lorem.sentence)
+=======
   Log.create(user_id: 21 + i, observation_id: 21 + i, comment: Faker::Lorem.sentence, hours_worked: rand(5) + 1)
+>>>>>>> e29248b1ddb0201b470dd612c4b3944d55a1c441
   # Log.create(user_id: 22 + i, observation_id: 22 + i, comment: Faker::Lorem.sentence)
 
   LabTask.create!(log_id: 21 + i , procedure_id: rand(25..30))

@@ -114,6 +114,16 @@
   width: 40%;
   margin-left: auto;
   margin-right: auto;
+<<<<<<< HEAD
+
+}
+
+ .experiment_list {
+   align-content: center;
+   font-size: 1.5em;
+ }
+=======
+>>>>>>> e29248b1ddb0201b470dd612c4b3944d55a1c441
 
 }
 
@@ -140,6 +150,8 @@ ul.nav_list {
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
+<<<<<<< HEAD
+=======
 }
 
 .experiment_show_container {
@@ -149,6 +161,7 @@ ul.nav_list {
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
+>>>>>>> e29248b1ddb0201b470dd612c4b3944d55a1c441
 }
 
 .exp_title {

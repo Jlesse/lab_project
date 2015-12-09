@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     if authorized_user
       session[:user_id] = authorized_user.id
       flash[:notice] = "You are now logged in."
-      redirect_to(:action => "index")
+      redirect_to(:controller => "experiments", :action => "index")
     else
       flash[:notice] = "Invalid email/password combination"
       redirect_to(:action => 'login')
