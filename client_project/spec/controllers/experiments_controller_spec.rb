@@ -36,7 +36,7 @@ RSpec.describe ExperimentsController do
    end
 
    describe "GET #new" do
-    it "assigns a new experiment as @experiment" do
+    it "assigns new experiment as @experiment" do
       get :new
       expect(assigns(:experiment)).to be_a_new Experiment
     end
