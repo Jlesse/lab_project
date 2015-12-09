@@ -1,9 +1,31 @@
-<h1>Create User</h1>
-  <%= simple_form_for @user do |f| %>
-    <%= f.input :first_name %><br>
-    <%= f.input :last_name %><br>
-    <%= f.input :email %><br>
-    <%= f.input :password %><br>
-    <%= f.input :admin,     as: :radio_buttons %><br><br>
-    <%= f.button :submit %>
-  <% end %>
+<div class="create_user_container">
+  <h1>Create User</h1>
+    <%= form_for :experiment, url: experiments_path do |f| %>
+      <p>
+        <%= f.label :first_name %><br>
+        <%= f.text_field :first_name %>
+      </p>
+      <p>
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name %>
+      </p>
+      <p>
+        <%= f.label :email %><br>
+        <%= f.text_field :email %>
+      </p>
+      <p>
+        <%= f.label :password %><br>
+        <%= f.password_field :password %>
+      </p>
+      <p>
+        <%= f.label :admin %><br />
+        <%= f.label :admin, "Yes", :value => "Yes"  %>
+        <%= f.radio_button :admin, true%>
+        <%= f.label :admin, "No", :value => "No" %>
+        <%= f.radio_button :admin, false, :checked => true %>
+      </p>
+      <p>
+        <%= submit_tag("Create User") %>
+      </p>
+    <% end %>
+</div>

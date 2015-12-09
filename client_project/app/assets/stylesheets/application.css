@@ -93,6 +93,14 @@
   margin-right: auto;
 }
 
+.create_user_container {
+  /*background-color: orange;*/
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
  .experiment_list {
    align-content: center;
    font-size: 1.5em;
