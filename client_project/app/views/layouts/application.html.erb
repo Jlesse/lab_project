@@ -29,7 +29,7 @@
             <% end %>
 
               <li class="nav_list"><a href="/sessions/logout">logout</a></li>
-              <li class="nav_list"><a href="#"><%= current_user.first_name %> <%= current_user.last_name %></a></li>
+              <li class="nav_list"><a href="/users/<%= current_user.id %>"><%= current_user.first_name %> <%= current_user.last_name %></a></li>
           <% else %>
               <li class="nav_list"><a href="/users/new">register</a></li>
               <li class="nav_list"><a href="/sessions/login">login</a></li>
@@ -38,6 +38,9 @@
         </ul>
       </div>
     </header>
+    <div class="image_header">
+
+    </div>
       <div class="container">
         <%= yield %>
       </div>

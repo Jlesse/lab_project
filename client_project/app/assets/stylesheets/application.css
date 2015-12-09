@@ -19,7 +19,13 @@
 
  body {
    background-color: #455a64 ;
+   background-image: url("labratory.jpg");
+   background-size: 100%;
+   background-attachment: fixed;
+   opacity: .9;
+   background-blend-mode: exclusion;
  }
+
  header {
    position: fixed;
    top: 0;
@@ -75,7 +81,6 @@
    padding-top: 1em;
    padding-left: .25em;
  }
-
 
 .container {
   margin-top: 120px;
