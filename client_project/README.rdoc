@@ -1,28 +1,26 @@
-== README
+Team labRAT
+Tech members: Rich Leo, Julian Lesse, Lily-Therese Walla, Troy Kuziel
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Tasked with creating a tracking application for a university department chair who oversees lab experiments, Team labRat launched a RoR environment that covers the following user stories:
 
-Things you may want to cover:
+The department chair needs to:
+1) Create a master user who can initialize admins and research students, restricting access accordingly.
 
-* Ruby version
+2) Add experiments and log them from beginning to end. This begins with a funding proposal, overview and experiment protocols.
 
-* System dependencies
+3) Add and remove researchers from each project.
 
-* Configuration
+4) View individual experiments, a list of all projects and student information, including an email link.
 
-* Database creation
+Students need to:
+1) Submit their observations as the experiment progresses.
 
-* Database initialization
+2) Track their hours, and mark each step completed.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+3) Email other students.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+
+
+
