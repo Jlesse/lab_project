@@ -28,10 +28,13 @@
         <label class="exp_header">Active:</label> <%= @experiment.active %>
       </li><br>
       <li>
-        <label class="exp_header">Begin date:</label> <%= @experiment.start_date %>
+        <label class="exp_header">Begin date:</label> <%= @experiment.start_date.strftime("%m/%d/%Y") %>
       </li><br>
       <li>
-        <label class="exp_header">End date:</label> <%= @experiment.end_date %>
+        <label class="exp_header">End date:</label> <%= @experiment.end_date.strftime("%m/%d/%Y") %>
+      </li><br>
+      <li>
+        <label class="exp_header">Grad Hour Budget:</label> <%= summed_log_hours %> out of <%= @experiment.grad_hour_budget %> hours worked.
       </li><br>
       <li>
       </li>
@@ -41,7 +44,7 @@
         <h3> Researchers </h3>
         <ul>
         <% @experiment.researchers.each do |researcher| %>
-          <li><%= link_to "#{researcher.first_name} #{researcher.last_name}", user_path(researcher) %></li>
+          <li id="researcher_name"><%= link_to "#{researcher.first_name} #{researcher.last_name}", user_path(researcher) %></li>
         <% end %>
         </ul>
       </div>
@@ -50,28 +53,24 @@
       <div id = "log">
         <h4 id="observation"> Observation: <%= log.observation.title %></h4>
         <p id="observer_name">name: <%="#{log.user.first_name} #{log.user.last_name}"%></p>
+        <p id="observer_name">hours logged: <%= log.hours_worked %></p>
           <div id="procedure_task">
               <ol>
              <% @experiment.procedures.each do |experiment_procedure| %>
                <li><%= experiment_procedure.text%>
                 <% if log.procedures.include?(experiment_procedure)%>
-                  <i class="material-icons #00bcd4">done</i></li>
+                  <i class="tiny material-icons cyan">done</i></li>
              <% end %>
          <% end %>
               </ol>
-
           </div>
         </div>
       <% end %>
   </div>
 </div>
 
-<div class="new_log_form">
-  <a href="/experiments/<%= @experiment.id %>/logs/new">Create New Log</a>
-</div>
-
-
-
-
-=======
->>>>>>> master
+  <center>
+    <div class="new_log_form">
+      <h3><a href="/experiments/<%= @experiment.id %>/logs/new">Create New Log</a></h3>
+    </div>
+  </center>

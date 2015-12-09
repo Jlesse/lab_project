@@ -6,12 +6,13 @@ class CreateExperiments < ActiveRecord::Migration
       t.text :hypothesis
       t.text :materials
       t.text :procedure
+      t.integer :grad_hour_budget
       t.text :results
       t.text :conclusion
       t.integer :proposal_id
       t.boolean :active
-      t.integer :start_date
-      t.integer :end_date
+      t.datetime :start_date
+      t.datetime :end_date
 
       t.timestamps null: false
     end

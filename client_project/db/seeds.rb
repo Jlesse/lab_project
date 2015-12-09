@@ -12,12 +12,13 @@
                               hypothesis: Faker::Lorem.paragraph,
                               materials: Faker::Lorem.paragraph,
                               procedure: Faker::Lorem.paragraph,
+                              grad_hour_budget: rand(200),
                               results: Faker::Lorem.paragraph,
                               conclusion: Faker::Lorem.paragraph,
                               proposal_id: i + 1,
                               active: true,
-                              start_date: Faker::Date.between(20.days.ago, Time.now, :all),
-                              end_date: Faker::Time.forward(20))
+                              start_date: Faker::Date.between(20.days.ago, Date.today),
+                              end_date: Faker::Date.forward(20))
 
   proposal = Proposal.create!(experiment_id: i + 1,
                             abstract: Faker::Lorem.paragraph,
@@ -45,7 +46,7 @@ end
   user.observations.create!(title: Faker::Lorem.word, text: Faker::Lorem.paragraph,
                             experiment_id: 1 )
 
-  Log.create(user_id: 1 + i, observation_id: 1 + i, comment: Faker::Lorem.sentence)
+  Log.create(user_id: 1 + i, observation_id: 1 + i, comment: Faker::Lorem.sentence, hours_worked: rand(5) + 1)
   # Log.create(user_id: 2, observation_id: i, comment: Faker::Lorem.sentence)
 
   # LabTask.create!(log_id: 1 + i, procedure_id: rand(6) + 1)
@@ -65,7 +66,7 @@ end
   user.observations.create!(title: Faker::Lorem.word, text: Faker::Lorem.paragraph,
                             experiment_id: 2 )
 
-  Log.create(user_id: 6 + i, observation_id: 6 + i, comment: Faker::Lorem.sentence)
+  Log.create(user_id: 6 + i, observation_id: 6 + i, comment: Faker::Lorem.sentence, hours_worked: rand(5) + 1)
   # Log.create(user_id: 7 + i, observation_id: 7 + i, comment: Faker::Lorem.sentence)
 
   LabTask.create!(log_id: 6 + i, procedure_id: rand(7..13))
@@ -85,7 +86,7 @@ end
   user.observations.create!(title: Faker::Lorem.word, text: Faker::Lorem.paragraph,
                             experiment_id: 3 )
 
-  Log.create(user_id: 11 + i, observation_id: 11 + i, comment: Faker::Lorem.sentence)
+  Log.create(user_id: 11 + i, observation_id: 11 + i, comment: Faker::Lorem.sentence, hours_worked: rand(5) + 1)
   # Log.create(user_id: 12 + i, observation_id: 12 + i, comment: Faker::Lorem.sentence)
 
 
@@ -106,7 +107,7 @@ end
   user.observations.create!(title: Faker::Lorem.word, text: Faker::Lorem.paragraph,
                             experiment_id: 4 )
 
-  Log.create(user_id: 16 + i, observation_id: 16 + i, comment: Faker::Lorem.sentence)
+  Log.create(user_id: 16 + i, observation_id: 16 + i, comment: Faker::Lorem.sentence, hours_worked: rand(5) + 1)
   # Log.create(user_id: 17 + i, observation_id: 17 + i, comment: Faker::Lorem.sentence)
 
   LabTask.create!(log_id: 16 + i, procedure_id: rand(19..25))
@@ -126,7 +127,7 @@ end
   user.observations.create!(title: Faker::Lorem.word, text: Faker::Lorem.paragraph,
                             experiment_id: 5 )
 
-  Log.create(user_id: 21 + i, observation_id: 21 + i, comment: Faker::Lorem.sentence)
+  Log.create(user_id: 21 + i, observation_id: 21 + i, comment: Faker::Lorem.sentence, hours_worked: rand(5) + 1)
   # Log.create(user_id: 22 + i, observation_id: 22 + i, comment: Faker::Lorem.sentence)
 
   LabTask.create!(log_id: 21 + i , procedure_id: rand(25..30))
