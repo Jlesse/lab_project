@@ -55,11 +55,10 @@
              <% @experiment.procedures.each do |experiment_procedure| %>
                <li><%= experiment_procedure.text%>
                 <% if log.procedures.include?(experiment_procedure)%>
-                  <i class="material-icons #00bcd4">done</i></li>
+                  <i class="tiny material-icons cyan">done</i></li>
              <% end %>
          <% end %>
               </ol>
-
           </div>
         </div>
       <% end %>
