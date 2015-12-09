@@ -19,7 +19,14 @@
 
  body {
    background-color: #455a64 ;
+   background-image: url("labratory.jpg");
+   background-size: 100%;
+   background-attachment: fixed;
+   opacity: .9;
+   background-repeat: no-repeat;
+   background-blend-mode: exclusion;
  }
+
  header {
    position: fixed;
    top: 0;
@@ -76,7 +83,6 @@
    padding-left: .25em;
  }
 
-
 .container {
   margin-top: 120px;
   background-color: white;
@@ -108,6 +114,16 @@
   width: 40%;
   margin-left: auto;
   margin-right: auto;
+<<<<<<< HEAD
+
+}
+
+ .experiment_list {
+   align-content: center;
+   font-size: 1.5em;
+ }
+=======
+>>>>>>> e29248b1ddb0201b470dd612c4b3944d55a1c441
 
 }
 
@@ -134,6 +150,8 @@ ul.nav_list {
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
+<<<<<<< HEAD
+=======
 }
 
 .experiment_show_container {
@@ -143,6 +161,7 @@ ul.nav_list {
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
+>>>>>>> e29248b1ddb0201b470dd612c4b3944d55a1c441
 }
 
 .exp_title {

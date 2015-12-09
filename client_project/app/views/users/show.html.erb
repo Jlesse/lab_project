@@ -2,7 +2,7 @@
 <ul>
     <% if @user.admin %>
   <li>
-    <p> Administrator</p>
+    <h2> Administrator</h2>
   </li>
     <% end %>
   <li>
@@ -15,4 +15,5 @@
   <% @user.experiments.each do |experiment| %>
     <%= link_to experiment.title, experiment_path(experiment) %>
   <% end %>
+  <br><br><%= link_to "Edit Profile Information", edit_user_path(@user) %>
 </ul>
