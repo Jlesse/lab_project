@@ -37,8 +37,7 @@
         <label class="exp_header">Grad Hour Budget:</label> <%= summed_log_hours %> out of <%= @experiment.grad_hour_budget %> hours worked.
       </li><br>
       <% if admin? %>
-        <%= link_to "Edit Current Experiment", edit_experiment_path(@experiment) %>
-        <label class="exp_header">Active:</label> <%= @experiment.active %>
+        <center><span class="exp_header"><%= link_to "Edit Current Experiment", edit_experiment_path(@experiment) %></span></center>
       <% end %>
       <li>
       </li>
@@ -76,7 +75,7 @@
 <% if admin? || current_user.experiments.any? {|experiment| experiment.id} %>
   <center>
     <div class="new_log_form">
-      <h3><a href="/experiments/<%= @experiment.id %>/logs/new">Create New Log</a></h3>
+      <span class="exp_header"><a href="/experiments/<%= @experiment.id %>/logs/new">Create New Log</a></span>
     </div>
   </center>
 <% end %>
