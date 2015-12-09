@@ -1,3 +1,65 @@
+<<<<<<< HEAD
+<h1><%= @experiment.title %></h1>
+<ul>
+  <li>
+    <b>Problem:</b> <%= @experiment.problem %>
+  </li>
+   <li>
+   <b>Proposal:</b> <%= @experiment.proposal.abstract %>
+  </li>
+  <li>
+    <b>Hypothesis:</b> <%= @experiment.hypothesis %>
+  </li>
+  <li>
+    <b>Materials:</b> <%= @experiment.materials %>
+  </li>
+  <li>
+    <b>Procedures:</b> <%= @experiment.procedure %>
+  </li>
+  <li>
+    Results: <%= @experiment.results %>
+  </li>
+  <li>
+    Conclusion: <%= @experiment.conclusion %>
+  </li>
+  <li>
+    Active: <%= @experiment.active %>
+  </li>
+  <li>
+    Begin date: <%= @experiment.start_date %>
+  </li>
+  <li>
+    End date: <%= @experiment.end_date %>
+  </li>
+  <li>
+  </li>
+  <li>
+  </li>
+  <h3> Researchers </h3>
+  <ul>
+  <% @experiment.researchers.each do |researcher| %>
+    <li><%= link_to "#{researcher.first_name} #{researcher.last_name}", user_path(researcher) %></li>
+  <% end %>
+  </ul>
+
+<div id="content">
+  <% @experiment.logs.each do |log| %>
+  <div id = "log">
+    <h4> Observation: <%= log.observation.title %></h4>
+    <p>name: <%="#{log.user.first_name} #{log.user.last_name}"%></p>
+     <% @experiment.procedures.each do |experiment_procedure| %>
+     <p><%= experiment_procedure.text%>
+      <% if log.procedures.include?(experiment_procedure)%>
+        CHECKED!
+      <% end %></p>
+     <% end %>
+     </div>
+  <% end %>
+</div>
+
+
+
+=======
 <div class="experiment_show_container">
   <div class="exp_title">
     <h1>Experiment: <%= @experiment.title %></h1>
@@ -72,6 +134,7 @@
       <% end %>
   </div>
 </div>
+>>>>>>> e29248b1ddb0201b470dd612c4b3944d55a1c441
 
 <% if current_user.experiments.any? {|experiment| experiment.id} %>
   <center>

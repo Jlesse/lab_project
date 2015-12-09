@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+<form>
+  PROCEDURES<br>
+  <% @procedures.each do |procedure| %>
+    <input type="checkbox" name="log[procedures[]]" value='<%=procedure.id%>' ><%= procedure.text %>
+  <% end %>
+  <br>
+  OBSERVATION:<br>
+  <input type="textbox" name="log[observation]">
+</form>
+
+
+=======
  <form method="post" action="/experiments/<%= @procedures[0].experiment_id %>/logs">
   <h2><%= @user.first_name %>'s Log</h2>
   PROCEDURES<br>
@@ -15,3 +28,4 @@
   <input type="submit" value="Submit">
 </form>
 
+>>>>>>> e29248b1ddb0201b470dd612c4b3944d55a1c441
