@@ -180,6 +180,10 @@ ul.nav_list {
   margin-bottom: 20px;
 }
 
+#researcher_name {
+  font-size: 1.2em;
+}
+
 #log {
   width: 100%;
   background-color: #00bcd4;
