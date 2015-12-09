@@ -8,8 +8,12 @@ end
 resources :comments
 resources :observations
 
+
 get 'admin', :to => "sessions#index"
 get 'login', :to => "sessions#login"
+get "/experiments/:id/log", :to => "log#new"
+post "/experiments/:id/log", :to => "log#create"
+
 # get 'students' :to => "sessions#index"
 #go to the same place, redirect to different pages, with before_actions to prevent
 # access unless you belonged...login page needs to be homepage, directs based on login...

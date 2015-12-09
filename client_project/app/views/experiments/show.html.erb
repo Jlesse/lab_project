@@ -15,14 +15,6 @@
   <li>
     <b>Procedures:</b> <%= @experiment.procedure %>
   </li>
-    <li>
-    <h3> Observations </h3>
-    <%= @experiment.observations.each do |observation|%>
-      <h4><%= observation.title %></h4>
-      <p><%=  observation.text %></p>
-      <p> - <%= link_to "#{observation.user.first_name} #{observation.user.last_name}" , user_path(observation.user)%></p>
-    <% end %>
-  </li>
   <li>
     Results: <%= @experiment.results %>
   </li>
@@ -45,67 +37,25 @@
   <h3> Researchers </h3>
   <ul>
   <% @experiment.researchers.each do |researcher| %>
-    <% if researcher%>
     <li><%= link_to "#{researcher.first_name} #{researcher.last_name}", user_path(researcher) %></li>
-    <% end %>
   <% end %>
   </ul>
 
-   <div id="content">
-      <% @experiment.logs.each do|log| %>
-      <h3><%=observation.title%></h3>
-      <div id = "observation">
-        <h4>procedures completed:</h4>
-        <%observation.procedures.each do |procedure|%>
-          <ul>
-              <li class="procedure_text"><%=procedure.text%></li>
-          </ul>
-            <% end %>
-          <ul>
-            <li class="observation_text"><%=observation.text%></li>
-            <li class="observation_text"><%=observation.created_at%></li>
-            <li class="observation_text"><%=" - #{observation.user.first_name} #{observation.user.last_name}"%></li>
-          </ul>
-      </div>
-    <% end %>
-    </div> -->
+<div id="content">
+  <% @experiment.logs.each do |log| %>
+  <div id = "log">
+    <h4> Observation: <%= log.observation.title %></h4>
+    <p>name: <%="#{log.user.first_name} #{log.user.last_name}"%></p>
+     <% @experiment.procedures.each do |experiment_procedure| %>
+     <p><%= experiment_procedure.text%>
+      <% if log.procedures.include?(experiment_procedure)%>
+        CHECKED!
+      <% end %></p>
+     <% end %>
+     </div>
+  <% end %>
+</div>
 
 
-  <!-- <h1>Logs</h2>
-    <div id="content">
-      <% @experiment.observations.each do|observation| %>
-      <h3><%=observation.title%></h3>
-      <div id = "observation">
-        <h4>procedures completed:</h4>
-        <%observation.procedures.each do |procedure|%>
-          <ul>
-              <li class="procedure_text"><%=procedure.text%></li>
-          </ul>
-            <% end %>
-          <ul>
-            <li class="observation_text"><%=observation.text%></li>
-            <li class="observation_text"><%=observation.created_at%></li>
-            <li class="observation_text"><%=" - #{observation.user.first_name} #{observation.user.last_name}"%></li>
-          </ul>
-      </div>
-    <% end %>
-    </div> -->
-<!--
-      <table>
-      <th>procedure</th><th>researcher</th><th>observation </th><th>completed at</th>
-    <% @experiment.observations.each do|observation| %>
-      <tr>
-        <td>
-          <tr>
-            <%observation.procedures.each do |procedure|%>
-              <td><%=procedure.text%></td>
-            <% end %>
-          </tr>
-        </td>
-        <td><%="#{observation.user.first_name} #{observation.user.last_name}"%></td>
-        <td><%=observation.text%></td>
-        <td><%=observation.created_at%></td>
-      </tr>
-    <% end %>
-    </table> -->
+
 

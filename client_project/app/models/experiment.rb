@@ -4,7 +4,8 @@ class Experiment < ActiveRecord::Base
   has_many :observations
   has_one :proposal
   has_many :procedures
-  has_many :logs, through: :procedures
+  has_many :lab_tasks, through: :procedures
+  has_many :logs, through: :lab_tasks
 
 
 end

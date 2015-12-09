@@ -13,8 +13,4 @@ module ApplicationHelper
      session[:user_id] != nil
   end
 
-  def task_complete?(procedure, )
-    .procedures.any?{|procedure| procedure.id == p.id}
-  end
-
 end
