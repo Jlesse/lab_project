@@ -11,13 +11,8 @@ resources :observations
 
 get 'admin', :to => "sessions#index"
 get 'login', :to => "sessions#login"
-<<<<<<< HEAD
-get "/experiments/:id/log", :to => "log#new"
-post "/experiments/:id/log", :to => "log#create"
-=======
 get "/experiments/:id/logs/new", :to => "logs#new", as: 'new_log'
 post "/experiments/:id/logs", :to => "logs#create"
->>>>>>> e29248b1ddb0201b470dd612c4b3944d55a1c441
 
 # get 'students' :to => "sessions#index"
 #go to the same place, redirect to different pages, with before_actions to prevent
