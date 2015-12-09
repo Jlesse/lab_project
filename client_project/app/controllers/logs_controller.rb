@@ -18,7 +18,7 @@ class LogsController < ApplicationController
     p log_params
 
     @observation = Observation.create(title: log_params[:title], text: log_params[:observation], user_id: current_user.id)
-    @log = Log.create(observation_id: @observation.id, user_id: current_user.id)
+    @log = Log.create(observation_id: @observation.id, user_id: current_user.id, hours_worked: log_params[:hours].to_i)
       log_params[:procedures].each do |procedure_id|
         LabTask.create(procedure_id: procedure_id.to_i, log_id: @log.id)
       end
@@ -33,7 +33,7 @@ class LogsController < ApplicationController
 
   private
   def log_params
-    params.require(:log).permit(:observation, :title, :procedures => [])
+    params.require(:log).permit(:observation, :title, :hours, :procedures => [])
   end
 
   def current_user

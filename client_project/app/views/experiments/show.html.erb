@@ -28,10 +28,13 @@
         <label class="exp_header">Active:</label> <%= @experiment.active %>
       </li><br>
       <li>
-        <label class="exp_header">Begin date:</label> <%= @experiment.start_date %>
+        <label class="exp_header">Begin date:</label> <%= @experiment.start_date.strftime("%m/%d/%Y") %>
       </li><br>
       <li>
-        <label class="exp_header">End date:</label> <%= @experiment.end_date %>
+        <label class="exp_header">End date:</label> <%= @experiment.end_date.strftime("%m/%d/%Y") %>
+      </li><br>
+      <li>
+        <label class="exp_header">Grad Hour Budget:</label> <%= @experiment.grad_hour_budget %>
       </li><br>
       <li>
       </li>

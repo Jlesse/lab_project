@@ -30,14 +30,15 @@ ActiveRecord::Schema.define(version: 20151208203427) do
     t.text     "hypothesis"
     t.text     "materials"
     t.text     "procedure"
+    t.integer  "grad_hour_budget"
     t.text     "results"
     t.text     "conclusion"
     t.integer  "proposal_id"
     t.boolean  "active"
-    t.integer  "start_date"
-    t.integer  "end_date"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "lab_tasks", force: :cascade do |t|
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(version: 20151208203427) do
     t.integer  "user_id"
     t.string   "comment"
     t.integer  "observation_id"
+    t.integer  "hours_worked"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
   end
