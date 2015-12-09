@@ -38,6 +38,7 @@
       </li><br>
       <% if admin? %>
         <%= link_to "Edit Current Experiment", edit_experiment_path(@experiment) %>
+        <label class="exp_header">Active:</label> <%= @experiment.active %>
       <% end %>
       <li>
       </li>
@@ -79,3 +80,4 @@
     </div>
   </center>
 <% end %>
+
