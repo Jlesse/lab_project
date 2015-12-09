@@ -17,10 +17,11 @@
         <%= f.label :materials %><br>
         <%= f.text_area :materials %>
       </p>
-      <p>
-        <%= f.label :procedure %><br>
-        <%= f.text_area :procedure %>
+      <p id="procedure_input">
+        <%= f.label :procedures %><br>
+        <textarea name="experiment[procedures][]" id="experiment_procedure"></textarea>
       </p>
+      <button id="procedure_button">new procedure</button>
       <p>
         <%= f.label :results %><br>
         <%= f.text_area :results %>
@@ -29,16 +30,12 @@
         <%= f.label :conclusion %><br>
         <%= f.text_area :conclusion %>
       </p>
-      <p>
-        <%= f.label :conclusion %><br>
-        <%= f.text_area :conclusion %>
-      </p>
       <div>
         <b><%= label :active, "Active:" %></b>
         <%= label :active, "Yes" %>
-        <%= f.radio_button :access_rights, false , :checked => true , :value => false %>
+        <%= f.radio_button :active, false , :checked => true , :value => false %>
         <%= label :active, "No" %>
-        <%= f.radio_button :access_rights, false , :checked => true , :value => false %>
+        <%= f.radio_button :active, false , :checked => true , :value => false %>
       </div>
 
       <p>

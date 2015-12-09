@@ -19,4 +19,14 @@ class ExperimentsController < ApplicationController
   def edit
     @experiment = Experiment.new
   end
+
+  def create
+    @experiment = Experiment.new(experiment_params)
+  end
+
+  private
+  def experiment_params
+    params.require(:experiment).permit(:observation, :title, :problem, :hypothesis, :materials, :result, :conclusion, :active, :start_date, :end_date, :procedures => [])
+  end
+
 end
