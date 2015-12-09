@@ -10,9 +10,14 @@ RSpec.describe ExperimentsController do
 	end
 
 	describe "GET #index" do
+    it "assigns all users as @users" do
+      get :index
+      expect(assigns(:users)).to eq(User.all)
+    end
+
     it "assigns all experiments as @experiments" do
       get :index
-      expect(assigns(:experiment)).to eq(Experiment.all)
+      expect(assigns(:experiments)).to eq(Experiment.all)
      end
   end
 
@@ -23,10 +28,10 @@ RSpec.describe ExperimentsController do
 			expect(assigns(:experiment).id).to eq(experiment.id)
 		end
 
-		it "only loads experiments that belong to a particular user" do
+    xit "only loads experiments that belong to a particular user" do
       unloadable_experiment = Experiment.create(user: other_user)
-      get :show, id: unloadable_experiment.id
-      expect(assigns(:experiment).id).not_to eq(unloadable_experiment.id)
+     get :show, id: unloadable_experiment.id
+     expect(assigns(:experiment).id).not_to eq(unloadable_experiment.id)
     end
    end
 
@@ -38,8 +43,11 @@ RSpec.describe ExperimentsController do
    end
 
    describe "GET #edit" do
-      it "updates an experiment" do
-      end
+    it "saves update of experiment" do
+      get :edit
+      expect(assigns(:experiment)).to be_a(Experiment)
     end
+  end
+end
 
 
