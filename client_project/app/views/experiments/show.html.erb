@@ -41,7 +41,7 @@
         <h3> Researchers </h3>
         <ul>
         <% @experiment.researchers.each do |researcher| %>
-          <li><%= link_to "#{researcher.first_name} #{researcher.last_name}", user_path(researcher) %></li>
+          <li id="researcher_name"><%= link_to "#{researcher.first_name} #{researcher.last_name}", user_path(researcher) %></li>
         <% end %>
         </ul>
       </div>
@@ -64,3 +64,13 @@
       <% end %>
   </div>
 </div>
+
+<div class="new_log_form">
+  <a href="/experiments/<%= @experiment.id %>/logs/new">Create New Log</a>
+</div>
+
+
+
+
+=======
+>>>>>>> master
