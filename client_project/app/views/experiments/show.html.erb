@@ -53,6 +53,7 @@
       <div id = "log">
         <h4 id="observation"> Observation: <%= log.observation.title %></h4>
         <p id="observer_name">name: <%="#{log.user.first_name} #{log.user.last_name}"%></p>
+        <p id="observer_name">hours logged: <%= log.hours_worked %></p>
           <div id="procedure_task">
               <ol>
              <% @experiment.procedures.each do |experiment_procedure| %>
