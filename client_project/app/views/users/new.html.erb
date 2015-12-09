@@ -18,11 +18,8 @@
         <%= f.password_field :password %>
       </p>
       <p>
-        <%= f.label :admin %><br />
-        <%= f.label :admin, "Yes", :value => "Yes"  %>
-        <%= f.radio_button :admin, true%>
-        <%= f.label :admin, "No", :value => "No" %>
-        <%= f.radio_button :admin, false, :checked => true %>
+        <%= f.label :admin_key%><br>
+        <%= f.password_field :admin_key%>
       </p>
       <p>
         <%= f.submit ("Create User") %>

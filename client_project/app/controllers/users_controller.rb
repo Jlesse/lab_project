@@ -12,8 +12,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    p user_params
-    @user = User.create(user_params)
+    admin_key = user_params[:admin_key]
+    @user = User.new(first_name: user_params[:first_name], last_name: user_params[:last_name], email: user_params[:email], password: user_params[:password])
+    if admin_key == "papyrus"
+      @user.admin = true
+    else
+      @user.admin = false
+    end
+      @user.save
     session[:user_id] = @user.id
     redirect_to @user
   end
@@ -36,7 +42,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :admin)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :admin_key)
   end
 
 end
