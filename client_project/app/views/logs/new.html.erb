@@ -1,0 +1,11 @@
+<form>
+  PROCEDURES<br>
+  <% @procedures.each do |procedure| %>
+    <input type="checkbox" name="log[procedures[]]" value='<%=procedure.id%>' ><%= procedure.text %>
+  <% end %>
+  <br>
+  OBSERVATION:<br>
+  <input type="textbox" name="log[observation]">
+</form>
+
+

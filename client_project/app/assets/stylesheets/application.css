@@ -44,6 +44,11 @@
    color: #00bcd4 ;
  }
 
+ textarea {
+   width: 450px;
+   height: 150px;
+ }
+
  .container {
    margin-top: 120px;
    background-color: white;
@@ -51,6 +56,7 @@
    margin-right: auto;
    padding: 10px;
    width: 50%;
+   border-radius: 3px;
  }
 
  .logo {
@@ -81,6 +87,21 @@
   padding-left: .25em;
 }
 
+.login {
+  /*background-color: blue;*/
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.create_user_container {
+  /*background-color: orange;*/
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
  .experiment_list {
    align-content: center;
    font-size: 1.5em;
@@ -103,9 +124,13 @@ ul.nav_list {
     padding-top: 15px;
 }
 
-.experiment_list {
+.experiment_container {
+  width: 70%;
+  /*background-color: #00bcd4;*/
   align-content: center;
-  font-size: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
 }
 
 .observation_text {
