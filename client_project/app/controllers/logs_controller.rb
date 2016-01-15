@@ -15,10 +15,9 @@ class LogsController < ApplicationController
 
   # post experiments/:id/logs
   def create
-    p log_params
 
     @observation = Observation.create(title: log_params[:title], text: log_params[:observation], user_id: current_user.id)
-    @log = Log.create(observation_id: @observation.id, user_id: current_user.id, hours_worked: log_params[:hours].to_i)
+    @log = Log.create(observation_id: @observation.id, user_id: current_user.id, hours_worked: log_params[:hours].to_i, experiment_id: params[:id])
       log_params[:procedures].each do |procedure_id|
         LabTask.create(procedure_id: procedure_id.to_i, log_id: @log.id)
       end

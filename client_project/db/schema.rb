@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20151208203427) do
 
   create_table "logs", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "experiment_id"
     t.string   "comment"
     t.integer  "observation_id"
     t.integer  "hours_worked"

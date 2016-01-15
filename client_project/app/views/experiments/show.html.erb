@@ -16,7 +16,12 @@
         <label class="exp_header">Materials:</label> <%= @experiment.materials %>
       </li><br>
       <li>
-        <label class="exp_header">Procedures:</label> <%= @experiment.procedure %>
+        <label class="exp_header">Procedures:</label>
+        <ol>
+        <%@experiment.procedures.each do |procedure| %>
+          <li><%= procedure.text %></li>
+          <% end %>
+        </ol>
       </li><br>
       <li>
         <label class="exp_header">Results:</label> <%= @experiment.results %>
@@ -44,13 +49,16 @@
       <li>
       </li>
       <div id="researcher_container">
-        <h3> Researchers </h3>
+        <h3 class="exp_header"> Researchers: </h3>
         <ul>
         <% @experiment.researchers.each do |researcher| %>
           <li id="researcher_name"><%= link_to "#{researcher.first_name} #{researcher.last_name}", user_path(researcher) %></li>
         <% end %>
         </ul>
       </div>
+      <% if admin? %>
+        <center><span class="exp_header"><a href="/experiments/<%= @experiment.id %>/users/new">Add New Researcher</a></span></center>
+      <% end %>
     <div id="content">
       <% @experiment.logs.each do |log| %>
       <div id = "log">

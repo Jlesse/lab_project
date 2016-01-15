@@ -13,6 +13,7 @@ get 'admin', :to => "sessions#index"
 get 'login', :to => "sessions#login"
 get "/experiments/:id/logs/new", :to => "logs#new", as: 'new_log'
 post "/experiments/:id/logs", :to => "logs#create"
+get "/experiments/:id/users/new", :to => "experiments#users"
 
 # get 'students' :to => "sessions#index"
 #go to the same place, redirect to different pages, with before_actions to prevent

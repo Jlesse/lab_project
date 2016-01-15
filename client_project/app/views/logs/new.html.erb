@@ -1,6 +1,7 @@
 
  <form method="post" action="/experiments/<%= @procedures[0].experiment_id %>/logs">
-  <h2><%= @user.first_name %>'s Log</h2>
+  <h2>
+    <%= @user.first_name %>'s Log</h2>
   PROCEDURES<br>
   <% @procedures.each do |procedure| %>
   <ul>
